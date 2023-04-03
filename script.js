@@ -29,16 +29,16 @@ display.appendChild(arrImage[i]);
 
 // console.log(arrImage.length);
 function showPrevious() {  
-    if (i < arrImage.length) {
+    if (i === 0) {
+        i = 0;
+    }     
+    else {        
         display.appendChild(arrImage[i]).style.display = "none";   
         i--;
         display.appendChild(arrImage[i]).style.display = "block";
-    }     
-    else {
-        i = arrImage.length
-    }
-   
+    }   
 }
+// setInterval(showPrevious(), 10000)
 function showNext() {
     if (i < arrImage.length-1) {
         display.appendChild(arrImage[i]).style.display = "none";   
@@ -49,5 +49,6 @@ function showNext() {
         i = arrImage.length-1;
     }
 }
+// setInterval(showNext(), 10000)
 
 
