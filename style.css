@@ -1,0 +1,13 @@
+.big-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#display{
+    margin: 10px;
+}
+
+img{
+    width: 300px;
+}
