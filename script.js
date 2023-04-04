@@ -18,34 +18,37 @@ img5.src = "Images/img5.JPG";
 
 let arrImage = [img1, img2, img3, img4, img5];
 
-let i = 0
+let i = 0;
 display.appendChild(arrImage[i]);
 
-function showPrevious() {  
-    if (i === 0) {
-        i = 0;
-    }     
-    else {        
-        display.appendChild(arrImage[i]).style.display = "none";   
-        i--;
-        display.appendChild(arrImage[i]).style.display = "block";
-    }   
+function showPrevious() {
+    display.appendChild(arrImage[i]).style.display = "none";
+    i--;
+    if (i < 0) {
+        i = arrImage.length - 1;
+    }
+    display.appendChild(arrImage[i]).style.display = "block";
+
+
+
 }
 
 setInterval(() => {
-    if (i < arrImage.length-1) {
-        display.appendChild(arrImage[i]).style.display = "none";   
-        i++;
-        display.appendChild(arrImage[i]).style.display = "block";
+    display.appendChild(arrImage[i]).style.display = "none";
+    i++
+    if (i >= arrImage.length) {
+        i = 0;
     }
+    display.appendChild(arrImage[i]).style.display = "block";
 }, 5000);
 
 function showNext() {
-    if (i > arrImage.length-1) {
-        display.appendChild(arrImage[i]).style.display = "none";   
-        i++;
-        display.appendChild(arrImage[i]).style.display = "block";
+    display.appendChild(arrImage[i]).style.display = "none";
+    i++
+    if (i >= arrImage.length) {
+        i = 0;
     }
+    display.appendChild(arrImage[i]).style.display = "block";
 }
 
 
